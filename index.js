@@ -11,7 +11,7 @@ window.timerHub = {
   },
   'isStopped': function(groupName) {
     groupName = groupName || '@';
-    if (! Object.prototype.hasOwnProperty.call(this.timers, groupName))) { 
+    if (! Object.prototype.hasOwnProperty.call(this.timers, groupName)) { 
       return true;
     }
     return this.timers[groupName].isStopped; 
