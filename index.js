@@ -4,21 +4,21 @@ window.timerHub = {
     groupName = groupName || '@';
     var timer = setTimeout(fn, time);
     // console.log(this.timers)
-    if (! this.timers.hasOwnProperty(groupName)) { 
+    if (! Object.prototype.hasOwnProperty.call(this.timers, groupName)) {
       this.timers[groupName] = {'isStopped': false, 'list': []};
     }
     this.timers[groupName].list.push(timer);
   },
   'isStopped': function(groupName) {
     groupName = groupName || '@';
-    if (! this.timers.hasOwnProperty(groupName)) { 
+    if (! Object.prototype.hasOwnProperty.call(this.timers, groupName))) { 
       return true;
     }
     return this.timers[groupName].isStopped; 
   },
   'stop': function(groupName) {
     groupName = groupName || '@';
-    if (! this.timers.hasOwnProperty(groupName)) { 
+    if (! Object.prototype.hasOwnProperty.call(this.timers, groupName)) { 
       return;
     }
     this.timers[groupName].isStopped = true; 
